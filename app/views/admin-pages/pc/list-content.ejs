@@ -1,0 +1,87 @@
+<div class="right_col" role="main">
+  <!-- top tiles -->
+  <div class="x_content">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card-box table-responsive">
+          <p class="text-muted font-13 m-b-30">
+            KeyTable provides Excel like cell navigation on any table. Events (focus, blur, action etc) can be assigned to individual cells, columns, rows or all cells.
+          </p>
+
+          <%let success = "Team has been Deleted successfully!"%>
+          <%let success2 = "Data updated successfully!" %>
+          <%if(error.length>0){if(error==success || error==success2){%>
+          <div class="alert alert-success"><%=error%></div>
+          <%}else{%>
+          <div class="alert alert-danger"><%=error%></div>
+          <%}%> <%}%>
+
+          <table id="datatable-keytable" class="table table-striped table-bordered" style="width:100%">
+            <thead>
+              <tr>
+                <th>Team Name</th>
+                <th>Institution</th>
+                <th>Coach Name</th>
+                <th>Coach Email</th>
+                <th>Leader Name</th>
+                <th>Team Contact</th>
+                <th>Team Email</th>
+                <th>Total</th>
+                <th>Paid</th>
+                <th>Selected</th>
+                <th>Select</th>
+                <th>Payment Status</th>
+                <th>Payment Done</th>
+                <th>Edit</th>
+                <th>Delete</th>
+                <th>Unique Key</th>
+              </tr>
+            </thead>
+
+
+            <tbody>
+              <% if (teams.length>0){ %>
+                <% teams.forEach(team => { %>
+                  <th><%= team.teamName %></th>
+                  <th><%= team.institution %></th>
+                  <th><%= team.coachName %></th>
+                  <th><%= team.coachEmail %></th>
+                  <th><%= team.leaderName %></th>
+                  <th><%= team.leaderContact %></th>
+                  <th><%= team.leaderEmail %></th>
+                  <th><%= team.total %></th>
+                  <th><%= team.paid %></th>
+                  <th>
+                    <% if(team.selected==true) { %>
+                    <p style="color: green;">YES</p> <% }else{ %> <p style="color: brown;">NO</p> <% } %>
+                  </th>
+                  <th>
+                    <% const selectionURL = "/ProgrammingContest/select/" + team._id %>
+                    <a href="<%= selectionURL %>"><i class="fa fa-check"></i><span class="fa fa-chevron"></span></a>
+                  </th>
+                  <th>
+                    <% if(team.paid==team.total) { %>
+                      <p style="color: green;">successful</p> <% }else{ %> <p style="color: brown;">payment due</p> <% } %>
+                  </th>
+                  <th>
+                    <% const paymentDoneURL = "/ProgrammingContest/payment/" + team._id %>
+                    <a href="<%= paymentDoneURL %>"><i class="fa fa-money"></i><span class="fa fa-chevron"></span></a>
+                  </th>
+                  <th>Edit</th>
+                  <th>
+                    <% const deleteURL = "/ProgrammingContest/delete/" + team._id %>
+                    <a href="<%= deleteURL %>"><i class="fa fa-trash"></i><span class="fa fa-chevron"></span></a>
+                  </th>
+                  <th><%= team.uniqueKey %></th>
+                </tr>
+                <%})}%>
+            </tbody>
+
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>

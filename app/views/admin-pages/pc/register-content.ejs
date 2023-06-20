@@ -1,0 +1,134 @@
+<div class="right_col" role="main">
+  <div class="">
+    <div class="clearfix"></div>
+    <div class="row">
+      <div class="col-md-12 col-sm-12 ">
+        <div class="x_panel">
+          <div class="x_title">
+            <h3>Programming Contest/<small> Register your team</small></h3>
+            <div class="clearfix"></div>
+          </div>
+          <div class="x_content">
+            <br />
+            <%let success = "This team has registered successfully!"%>
+            <%if(error.length>0){if(error==success){%>
+            <div class="alert alert-success"><%=error%></div>
+            <%}else{%>
+            <div class="alert alert-danger"><%=error%></div>
+            <%}%> <%}%>
+            <form method="POST" action="/ProgrammingContest/register" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+              <div class="row">
+								<div class="col-md-4 col-sm-10  form-group">
+									<input type="text" placeholder="Name of your team" id="teamName" name="teamName" class="form-control" required>
+								</div>
+								<div class="col-md-4 col-sm-10  form-group">
+									<input type="text" placeholder="Name of your institution" id="institution" name="institution" class="form-control" required>
+								</div>
+							</div>
+
+              <div class="row"><h5>Information regarding the coach</h5></div>
+              <div class="row">
+								<div class="col-md-4 col-sm-10  form-group">
+									<input type="text" placeholder="Name" class="form-control" id="coachName" name="coachName" required>
+								</div>
+								<div class="col-md-4 col-sm-10  form-group">
+									<input type="text" placeholder="Contact Number" class="form-control" id="coachContact" name="coachContact" required>
+								</div>
+								<div class="col-md-4 col-sm-10  form-group">
+									<input type="text" placeholder="Email" class="form-control" id="coachEmail" name="coachEmail" required>
+								</div>
+							</div>
+              <div class="row">
+                <div class="col-md-4 col-sm-10  form-group">
+                  <select class="form-control" id="coachTshirt" name="coachTshirt" required>
+                    <option>---Choose a T-shirt size from below---</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="row"><h5>Information regarding the Leader</h5></div>
+              <div class="row">
+								<div class="col-md-4 col-sm-10  form-group">
+									<input type="text" placeholder="Name" class="form-control" id="leaderName" name="leaderName" required>
+								</div>
+								<div class="col-md-4 col-sm-10  form-group">
+									<input type="text" placeholder="Contact Number" class="form-control" id="leaderContact" name="leaderContact" required>
+								</div>
+								<div class="col-md-4 col-sm-10  form-group">
+									<input type="text" placeholder="Email" class="form-control" id="leaderEmail" name="leaderEmail" required>
+								</div>
+							</div>
+              <div class="row">
+                <div class="col-md-4 col-sm-10  form-group">
+                  <select class="form-control" id="leaderTshirt" name="leaderTshirt" required>
+                    <option>---Choose a T-shirt size from below---</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="row"><h5>Information regarding Member-1</h5></div>
+              <div class="row">
+								<div class="col-md-4 col-sm-10  form-group">
+									<input type="text" placeholder="Name" class="form-control" id="member1Name" name="member1Name" required>
+								</div>
+								<div class="col-md-4 col-sm-10  form-group">
+									<input type="text" placeholder="Contact Number" class="form-control" id="member1Contact" name="member1Contact" required>
+								</div>
+								<div class="col-md-4 col-sm-10  form-group">
+									<input type="text" placeholder="Email" class="form-control" id="member1Email" name="member1Email" required>
+								</div>
+							</div>
+              <div class="row">
+                <div class="col-md-4 col-sm-10  form-group">
+                  <select class="form-control" id="member1Tshirt" name="member1Tshirt" required>
+                    <option>---Choose a T-shirt size from below---</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="row"><h5>Information regarding member-2</h5></div>
+              <div class="row">
+								<div class="col-md-4 col-sm-10  form-group">
+									<input type="text" placeholder="Name" class="form-control" id="member2Name" name="member2Name" required>
+								</div>
+								<div class="col-md-4 col-sm-10  form-group">
+									<input type="text" placeholder="Contact Number" class="form-control" id="member2Contact" name="member2Contact" required>
+								</div>
+								<div class="col-md-4 col-sm-10  form-group">
+									<input type="text" placeholder="Email" class="form-control" id="member2Email" name="member2Email" required>
+								</div>
+							</div>
+              <div class="row">
+                <div class="col-md-4 col-sm-10  form-group">
+                  <select class="form-control" id="member2Tshirt" name="member2Tshirt" required>
+                    <option>---Choose a T-shirt size from below---</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="ln_solid"></div>
+              <div class="item form-group">
+                <div class="col-md-6 col-sm-6 offset-md-3">
+                  <button class="btn btn-primary" type="reset">Reset</button>
+                  <button type="submit" class="btn btn-success">Submit</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
