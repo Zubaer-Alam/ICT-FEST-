@@ -9,11 +9,11 @@ Steps:
 
    2. Open a terminal inside the folder and clone the repository:
                 
-          git clone https://github.com/Zubaer-Alam/ICT-Fest-App
+          git clone https://github.com/Zubaer-Alam/ICT-Fest
           
    3. Navigate to the app directory:
             
-          cd ICT-Fest-App
+          cd ICT-Fest
           
    4. Build and run the Docker container:
          
