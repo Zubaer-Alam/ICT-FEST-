@@ -11,7 +11,7 @@ const app = express();
 require("./config/passport")(passport);
 
 //db connection
-mongoose.connect(process.env.MongoURI, {
+mongoose.connect("mongodb://mongodb:27017/local", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,
